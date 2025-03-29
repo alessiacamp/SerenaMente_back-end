@@ -32,7 +32,7 @@ public class JWTCheckerFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
 
-        if (request.getRequestURI().equals("/auth/login")  || request.getRequestURI().equals("/utente")|| request.getRequestURI().equals("/volontario") || request.getRequestURI().equals("/auth/modifica") || request.getRequestURI().equals("/auth/getUser"))  {
+        if (request.getRequestURI().equals("/auth/login") || request.getRequestURI().equals("/utente") || request.getRequestURI().equals("/volontario") || request.getRequestURI().equals("/auth/modifica") || request.getRequestURI().equals("/auth/getUser")) {
             filterChain.doFilter(request, response);
             return;
         }

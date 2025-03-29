@@ -33,8 +33,6 @@ public class UtenteController {
     }
 
 
-
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Utente save(@RequestBody @Validated NewUtenteDTO body, BindingResult validationResult) {

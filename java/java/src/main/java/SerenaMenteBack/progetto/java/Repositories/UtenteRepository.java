@@ -1,7 +1,6 @@
 package SerenaMenteBack.progetto.java.Repositories;
 
 
-
 import SerenaMenteBack.progetto.java.Entities.Utente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -57,13 +57,13 @@ public class AuthService {
     }
 
     public String updateUser(String email, NewUtenteDTO updateDTO) {
-        // Cerca prima tra i volontari
+
         Optional<Volontario> volontario = volontarioService.findByEmailSafe(email);
         if (volontario.isPresent()) {
             return updateVolontario(volontario.get(), updateDTO);
         }
 
-        // Poi cerca tra gli utenti
+
         Optional<Utente> utente = utenteService.findByEmailSafe(email);
         if (utente.isPresent()) {
             return updateUtente(utente.get(), updateDTO);
@@ -74,7 +74,7 @@ public class AuthService {
 
     @Transactional(readOnly = true)
     public NewUtenteDTO getUserbyEmail(String email) {
-        // Cerca prima tra i volontari
+
         Optional<Volontario> volontario = volontarioService.findByEmailSafe(email);
         if (volontario.isPresent()) {
             Volontario v = volontario.get();
@@ -89,7 +89,7 @@ public class AuthService {
             );
         }
 
-        // Poi cerca tra gli utenti
+
         Optional<Utente> utente = utenteService.findByEmailSafe(email);
         if (utente.isPresent()) {
             Utente u = utente.get();

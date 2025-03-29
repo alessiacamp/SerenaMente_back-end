@@ -5,7 +5,6 @@ import SerenaMenteBack.progetto.java.Entities.Volontario;
 import SerenaMenteBack.progetto.java.Repositories.VolontarioRepository;
 import SerenaMenteBack.progetto.java.exceptions.BadRequestException;
 import SerenaMenteBack.progetto.java.exceptions.NotFoundException;
-import SerenaMenteBack.progetto.java.payloads.NewUtenteDTO;
 import SerenaMenteBack.progetto.java.payloads.NewVolontarioDTO;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
@@ -104,11 +103,13 @@ public class VolontarioService {
 
 
     }
+
     @Transactional(readOnly = true)
     public Volontario findByEmail(String email) {
         return this.volontarioRepository.findByEmail(email)
                 .orElseThrow(() -> new NotFoundException("Volontario con email " + email + " non trovato!"));
     }
+
     @Transactional(readOnly = true)
     public Optional<Volontario> findByEmailSafe(String email) {
         try {

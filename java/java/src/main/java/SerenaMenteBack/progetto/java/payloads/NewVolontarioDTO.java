@@ -1,7 +1,6 @@
 package SerenaMenteBack.progetto.java.payloads;
 
-import SerenaMenteBack.progetto.java.Entities.Ruolo;
-import jakarta.validation.constraints.Email;
+
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 

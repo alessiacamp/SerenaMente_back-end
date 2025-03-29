@@ -105,10 +105,12 @@ public class UtenteService {
 
 
     }
+
     @Transactional(readOnly = true)
     public Utente findByEmail(String email) {
         return this.utenteRepository.findByEmail(email).orElseThrow(() -> new NotFoundException("L'utente con email " + email + " non è stato trovato"));
     }
+
     @Transactional(readOnly = true)
     public Optional<Utente> findByEmailSafe(String email) {
         try {

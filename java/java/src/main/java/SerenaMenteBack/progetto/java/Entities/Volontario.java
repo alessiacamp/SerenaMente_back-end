@@ -23,7 +23,7 @@ public class Volontario {
     @Setter(AccessLevel.NONE)
     private UUID id;
     @Lob
-    @Basic(fetch = FetchType.LAZY) // Aggiungi questa annotazione
+    @Basic(fetch = FetchType.LAZY)
     private byte[] foto;
 
     private String nome;
@@ -100,8 +100,7 @@ public class Volontario {
     }
 
 
-
-    public Volontario(String nome, String cognome, String email, String password, String messaggio, byte[]foto) {
+    public Volontario(String nome, String cognome, String email, String password, String messaggio, byte[] foto) {
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
@@ -110,7 +109,6 @@ public class Volontario {
         this.ruolo = Ruolo.VOLONTARIO;
         this.foto = foto;
     }
-
 
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
